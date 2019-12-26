@@ -5,16 +5,18 @@ from .models import (
 )
 
 
+class AddressSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Address
+        fields = ('id' , 'city' , 'country')
+
+
 class PersonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Person
-        fields = "__all__"
+        fields =('id' ,'address' , 'first_name' , 'last_name' , 'age')
 
 
-class AddressSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        moddel = Address
-        fields = "__all__"
 
